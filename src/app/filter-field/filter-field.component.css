@@ -1,0 +1,32 @@
+.filter-wrapper{
+  margin-left: 10px;
+  width: 100%;
+}
+
+.filter-block{
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.filter-breeds{
+  overflow: scroll;
+  height: 200px;
+}
+
+.filter-slider{
+  width: 100%;
+}
+
+.filter-title {
+
+}
+
+.filter-button {
+  margin-bottom: 20px;
+  width: 70px;
+  justify-content: center;
+}
+.button-block{
+  display: flex;
+  justify-content: space-around;
+}

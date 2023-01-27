@@ -1,0 +1,31 @@
+.app-wrapper{
+  display: flex;
+  margin-top: 50px;
+}
+
+.content-block {
+  margin-left: 200px;
+  justify-content: flex-end;
+  width: 80%;
+}
+
+.filter-field{
+  width: 200px;
+}
+
+.cat-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cat-element {
+  margin-top: 20px;
+}
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

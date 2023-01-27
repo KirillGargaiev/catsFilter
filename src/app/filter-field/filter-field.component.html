@@ -1,0 +1,36 @@
+<form
+  [formGroup]="form"
+>
+  <div class="filter-block">
+    <div class="filter-title">Breeds</div>
+    <div class="filter-breeds" *ngIf="breeds$ | async as breeds">
+      <div *ngFor="let breed of breeds">
+        <mat-checkbox
+          (change)="handleBreed($event)">
+          {{breed}}
+        </mat-checkbox>
+      </div>
+    </div>
+  </div>
+  <div class="filter-block" *ngIf="[minHeight$ | async,  maxHeight$ | async] as options">
+    <div class="filter-title">Height</div>
+    <mat-slider class="filter-slider" min="{{options[0]}}" max="{{options[1]}}">
+      <input formControlName="minHeight" matSliderStartThumb>
+      <input formControlName="maxHeight" matSliderEndThumb>
+    </mat-slider>
+  </div>
+  <div class="filter-block" *ngIf="[minWidth$ | async, maxWidth$ | async] as options">
+    <div class="filter-title">Width</div>
+    <mat-slider class="filter-slider" min='{{options[0]}}' max="{{options[1]}}">
+      <input formControlName="minWidth" matSliderStartThumb>
+      <input formControlName="maxWidth" matSliderEndThumb>
+    </mat-slider>
+  </div>
+  <mat-form-field *ngIf="limit$ | async as limit" class="example-full-width">
+    <mat-label>Limit of cats</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="{{limit}}" (change)="setLimit($event.target)">
+  </mat-form-field>
+  <div class="button-block">
+    <button mat-raised-button color="accent" class="filter-button" (click)="submit()">Submit</button>
+    <button mat-raised-button color="accent" class="filter-button" (click)="reset()">Reset</button>  </div>
+</form>

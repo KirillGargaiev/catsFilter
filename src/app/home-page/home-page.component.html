@@ -1,0 +1,16 @@
+<div class="app-wrapper" *ngIf="loaded$ | async; else loading">
+  <app-filter-field class="filter-field"></app-filter-field>
+  <div class="content-block">
+    <div *ngIf="cats$ | async as cats">
+      <div class="cat-list" *ngIf="limit$ | async as limit">
+        <app-cat-item class="cat-element" *ngFor="let cat of cats | slice: 0: limit" [cat]="cat"></app-cat-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <mat-spinner class="spinner" color="warn"></mat-spinner>
+</ng-template>
+
+
